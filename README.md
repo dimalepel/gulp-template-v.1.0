@@ -1,4 +1,4 @@
-# Bits consulting prod [ссылка](https://dimalepel.github.io/bits-consulting-prod/)
+# Reponame [ссылка](https://username.github.io/reponame/)
 
 ## Краткая инструкция по работе
 ### Для начала работы у вас должент быть установлен:
