@@ -1,0 +1,15 @@
+* {
+  scrollbar-color: var(--color-accent) var(--color-white);     /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* ширина для вертикального скролла */
+  height: 6px; /* высота для горизонтального скролла */
+  background-color: var(--color-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 0;
+}

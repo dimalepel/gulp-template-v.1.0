@@ -1,0 +1,93 @@
+// Вставка миксина @include mixin_name();
+
+// Шрифт
+@mixin Font($font-name: $font-family-default, $font-weight: 400, $font-style: normal) {
+  font-family: $font-name, "Arial", sans-serif; // шрифты без засечек
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+// Добавление шрифтов в fonts.scss
+@mixin FontFace($font-family, $url, $weight) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("../fonts/#{$url}.woff2") format("woff2"),
+      url("../fonts/#{$url}.woff") format("woff");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+// Обнуление списка
+@mixin List-Reset($margin-top-value: 0, $margin-bottom-value: 0, $padding-left-value: 0) {
+  margin-top: $margin-top-value;
+  margin-bottom: $margin-bottom-value;
+  padding-left: $padding-left-value;
+  list-style: none;
+}
+
+// Анимация
+@mixin Transition($transition-property: all, $transition-duration: 0.3s) {
+  transition-property: $transition-property;
+  transition-duration: $transition-duration;
+}
+
+// Обнуление дефолтных стилей button
+@mixin ButtonReset() {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+// Центрирование/позиционирование содержимого во влекс-контейнер (для иконок)
+@mixin FlexCentered($flex-align: center, $flex-justify: center) {
+  display: flex;
+  align-items: $flex-align;
+  justify-content: $flex-justify;
+}
+
+// Медиа
+// Using
+//.div {
+//   @include _1170 {
+//       @content;
+//   }
+//}
+
+
+@mixin _1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin _980 {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin _760 {
+  @media (max-width: 760px) {
+    @content;
+  }
+}
+
+@mixin _680 {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin _460 {
+  @media (max-width: 460px) {
+    @content;
+  }
+}
+
+@mixin _320 {
+  @media (max-width: 320px) {
+    @content;
+  }
+}

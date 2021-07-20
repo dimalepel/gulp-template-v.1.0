@@ -1,0 +1,10 @@
+//-  миксины
+
+//- добавление svg из спрайта
+mixin svg(name, iconClass, iconWidth, iconHeight)
+  if iconClass
+    svg(class= iconClass, width= iconWidth, height= iconHeight)
+      use(xlink:href=`images/sprite.svg#${name}`)
+  else
+    svg
+      use(xlink:href=`images/sprite.svg#${name}`)

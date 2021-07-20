@@ -1,0 +1,42 @@
+//- базовый шаблон страницы
+include mixins
+
+block globalVars
+  - var siteTitle = "Название проекта (сайта)";
+  - var pageDescription = " ";
+  - var lang = "en";
+  - var charset = "UTF-8";
+
+block vars
+  - var pageTitle = " ";
+
+doctype html
+html(lang=lang)
+  head
+    meta(charset=charset)
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="description", content=`${pageDescription}`)
+    title #{pageTitle} | #{siteTitle}
+    //- подключаем favicon
+    link(rel="icon", href="favicon.ico")
+    link(rel="icon", href="favicon/favicon.svg", type="image/svg+xml")
+    link(rel="icon", href="favicon/180.png")
+    //- webmanifest
+    link(rel="manifest", href="manifest.webmanifest")
+    //- стили
+    link(rel="stylesheet", href="styles/styles.css")
+  body
+    .page-wrapper
+      //- подключаем header
+      include blocks/header
+
+      main.page-main
+        //- динамичесеское содержимое страниц
+        block content
+
+      //- подключаем footer
+      include blocks/footer
+      //- подключаем модальные окна
+      include blocks/modals
+      //- подключаем файл со скриптами
+      include blocks/scripts
